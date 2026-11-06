@@ -32,7 +32,8 @@ class PredicateHarnessTests(unittest.TestCase):
     def setUp(self):
         temporary = tempfile.TemporaryDirectory(prefix="predicate-harness-test-")
         self.addCleanup(temporary.cleanup)
-        self.root = Path(temporary.name)
+        # Guards return canonical paths; temp roots can use OS-specific aliases.
+        self.root = Path(temporary.name).resolve()
         self.manifest = self.root / "manifest.json"
         self.source = self.root / "synthetic.bin"
         self.source.write_bytes(b"\x89\xe8\0\0\0\0\xe9\xff\xff\xff\xff" * 10)

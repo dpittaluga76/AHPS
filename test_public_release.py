@@ -14,7 +14,8 @@ class PublicReleaseTests(unittest.TestCase):
     def setUp(self):
         temporary = tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
-        self.root = Path(temporary.name)
+        # Match the validator's canonical paths, including aliased temp roots.
+        self.root = Path(temporary.name).resolve()
 
     def tree(self, files):
         names = sorted({"PUBLIC_FILES.txt", *files})
