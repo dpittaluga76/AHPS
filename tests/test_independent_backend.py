@@ -481,7 +481,7 @@ class IndependentRepresentationTests(unittest.TestCase):
 
     @requires_transforms
     def test_fresh_process_works_while_old_python_codecs_and_planner_imports_are_denied(self):
-        root = str(Path(__file__).resolve().parent)
+        root = str(Path(__file__).resolve().parents[1])
         script = """
 import sys
 blocked = ('lzma', '_lzma', 'ahps', 'zlib', 'bz2', '_bz2', 'zstandard',

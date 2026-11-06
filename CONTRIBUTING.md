@@ -7,16 +7,28 @@ Use Python 3.11 or newer with the standard-library `lzma` module. The production
 Python implementation has no third-party Python dependencies. Follow
 [the build guide](docs/building.md) for optional native acceleration.
 
+Run these commands from the repository root:
+
 ```text
 python ahps.py selftest --no-progress
 python scripts/run_tests.py
+python scripts/run_tests.py tests.test_csv -v
+python scripts/check_public.py
 ```
+
+Tests and shared helpers live in `tests/`, with preserved reference data in
+`tests/fixtures/`. Add new regression modules as `tests/test_*.py`; the runner
+finds them automatically. A focused selector can name a module, class, or method,
+for example `tests.test_csv.CsvTransformTests`. Short selectors such as
+`test_csv` also work through `scripts/run_tests.py`.
 
 Tests use synthetic inputs and the small public fixtures. Native-only and
 platform-specific tests report capability skips when their requirements are
 unavailable. Optional weight-comparison experiments use
 `requirements-research.txt`. External corpora and model files are not required
-to contribute to the core codec.
+to contribute to the core codec. See the [test guide](tests/README.md) for
+Python/native checks and standard `unittest` discovery, and the
+[repository layout](README.md#repository-layout) for where other changes belong.
 
 Before proposing a change, describe the input or failure that motivates it.
 For codec changes, include independent wire fixtures or a focused regression

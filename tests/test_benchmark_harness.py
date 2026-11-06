@@ -15,7 +15,7 @@ from unittest import mock
 
 import benchmark_ahps as bench
 import ahps
-from test_support import hardlink_or_skip
+from tests.test_support import hardlink_or_skip
 
 
 class HarnessTests(unittest.TestCase):

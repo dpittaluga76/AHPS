@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Decode preserved v3 archives: python -m unittest test_golden_archives."""
+"""Decode preserved v3 archives: python -m unittest tests.test_golden_archives."""
 
 import hashlib
 import lzma
@@ -9,7 +9,7 @@ import unittest
 import ahps
 
 
-FIXTURES = Path(__file__).parent / "tests" / "fixtures" / "v3"
+FIXTURES = Path(__file__).resolve().parent / "fixtures" / "v3"
 CASES = ("empty", "lcg", "struct", "tiny")
 OPTIONAL_DLL_FILES = ("dll_c.ahps", "dll_py.ahps", "dll.sha256")
 

@@ -96,7 +96,7 @@ using these outcomes, and no production change follows from this screen.
 - All 20 planned outcomes, identities and resource records (local record `relational-corpus-20261103.json`).
 - [Independent evidence audit](relational-corpus-audit-20261103.md).
 - [Harness](../research/compare_relational_corpus.py) and
-  [adapter tests](../test_relational_file.py).
+  [adapter tests](../tests/test_relational_file.py).
 - Local immutable snapshots, complete archives/restored files, timeout evidence
   and logs: `experiments/relational-corpus-20261103/`.
 - Full regression log: `experiments/relational-corpus-preflight-20261103/tests.log`,

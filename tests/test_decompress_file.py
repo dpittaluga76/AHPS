@@ -15,10 +15,10 @@ from unittest import mock
 import zlib
 
 import ahps
-from test_search_method import code_bytes
+from tests.test_search_method import code_bytes
 
 
-GOLDEN = Path(__file__).resolve().parent / "tests" / "fixtures" / "v3"
+GOLDEN = Path(__file__).resolve().parent / "fixtures" / "v3"
 ENGINES = (True, False) if ahps.SIMD_BRIDGE.lib is not None else (True,)
 SMALL_LIMITS = ahps.DecodeLimits(16 << 20, 1 << 20, 1 << 20)
 

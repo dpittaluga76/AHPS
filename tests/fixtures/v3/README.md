@@ -24,7 +24,7 @@ the tests verify them. An incomplete optional set fails validation.
 The optional `dll` archives each have SHA-256
 `caf5ed4104d253268c7958d235dab9a31dccdaec45081916d2f6d2578d7257b0`.
 
-`python -m unittest test_golden_archives -v` verifies the v3 header with bounded
+`python -m unittest tests.test_golden_archives -v` verifies the v3 header with bounded
 XZ extraction, then checks restored-data hashes for every archive through both
 decoders. The native decoder test explicitly skips when the C kernel is absent.
 The optional historical DLL test explicitly skips when all three local files

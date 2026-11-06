@@ -41,7 +41,7 @@ FLAGS = ("-O3", "-mavx2", "-mpopcnt", "-shared", "-DAHPS_EXPERIMENT_NO_MODRM",
 def artifact_paths(experiment_dll=None, compiler=None):
     paths = [REPO / name for name in ("ahps.py", "ahps_simd.c", "ahps_simd.dll",
              "libahps_simd.so", "libahps_simd.dylib", "benchmark_ahps.py",
-             "benchmark_predicates.py", "test_predicate_harness.py")]
+             "benchmark_predicates.py", "tests/test_predicate_harness.py")]
     if experiment_dll is not None:
         paths += [Path(experiment_dll), Path(experiment_dll).with_name("build.json")]
     if compiler is not None:

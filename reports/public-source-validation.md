@@ -27,8 +27,9 @@ were replaced by placeholders while retaining archive bytes and recorded hashes.
 ## Validation on Windows
 
 All test runs below used the exported source copy, separate from the original
-development tree and its private data. Test discovery is restricted to the root
-test modules.
+development tree and its private data. At the time of these runs, discovery was
+restricted to the root test modules. The suite now lives in `tests/`; the current
+[test guide](../tests/README.md) documents its runner and discovery commands.
 
 | Configuration | Tests | Passed | Skipped | Result |
 | --- | ---: | ---: | ---: | --- |

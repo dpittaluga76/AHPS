@@ -13,7 +13,7 @@ import unittest
 from unittest import mock
 
 import benchmark_predicates as pred
-from test_support import hardlink_or_skip
+from tests.test_support import hardlink_or_skip
 
 
 class XorKernel:

@@ -67,6 +67,14 @@ isolated Python subprocesses. The SIMD library must report ABI 206 and rANS
 must report ABI 1. An ABI check confirms interface version and loadability.
 Run the synthetic test suite to verify codec behavior.
 
+```text
+python scripts/run_tests.py --require-native -v
+```
+
+This check requires both native libraries. On hosts with only portable rANS,
+run `python scripts/run_tests.py` instead. The [test guide](../tests/README.md)
+also covers source-only verification and focused regression tests.
+
 Compilation or ABI-check failure leaves existing libraries untouched. After
 all checks pass, each library is installed with an atomic file replacement.
 If an installation fails partway, the script attempts to restore already

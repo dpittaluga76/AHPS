@@ -53,7 +53,7 @@ The scorer timing uses 16,386 synthetic bytes per call and includes the Python/n
 
 - Machine-readable evidence (local record `poly2-dedup-validation-20261103.json`): frozen provenance, declared inputs, complete comparison results, build hashes/commands, and diagnostic timing samples.
 - Integration log (local record `poly2-integration-tests-20261103.log`): `python -B -m unittest discover -v` against the installed candidate DLL.
-- [Regression tests](../test_poly2_canonical.py): frozen scorer expectations, independent residual construction, and noncanonical archive compatibility.
+- [Regression tests](../tests/test_poly2_canonical.py): frozen scorer expectations, independent residual construction, and noncanonical archive compatibility.
 - Local artifacts: `experiments/poly2-dedup-20261103/` retains the original and rebuilt reference, candidate, input snapshots, plans, containers, archives, `freeze.json`, `cases.json`, and the verification/finalization scripts. This directory is ignored by Git; the evidence JSON records its identities and location.
 
 The verification script's `capture --label reference --full` ran before edits; `capture --label rebuilt-reference` checked the rebuild; `capture --label candidate --full` checked the candidate. Captures refuse to overwrite existing artifact directories. Finalization checked matrix completeness, compared actual bytes again, verified frozen-source hashes, and confirmed the installed Python/C/DLL files match the tested candidate.

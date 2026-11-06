@@ -112,6 +112,7 @@ specific to their recorded inputs, settings, and environment.
 
 ```text
 python scripts/run_tests.py
+python scripts/run_tests.py tests.test_csv -v
 python scripts/check_public.py
 ```
 
@@ -120,10 +121,22 @@ native libraries, Windows-specific research components, or unavailable
 filesystem capabilities report explicit skips. Optional external weight-codec
 experiments use `requirements-research.txt` and are separate from core AHPS.
 
-The repository contains three layers. `ahps.py` and the `ahps_*` support modules
-are the current core. `app.py`, `ahps-binv2.py`, and `ahps-binv2_benchmark.py` are
-historical prototypes retained for context and compatibility. `research/`
-contains separate experimental codecs and fixed development protocols.
+See the [test guide](tests/README.md) for focused tests, discovery, and explicit
+Python/native checks.
+
+### Repository layout
+
+| Location | Contents |
+| --- | --- |
+| `ahps.py`, `ahps_*` | Core CLI, codec modules, and optional native C sources |
+| `tests/` | Regression tests, shared test helpers, and preserved fixtures |
+| `scripts/` | Test runner, native builds, demo data, and source-release tools |
+| `research/` | Experimental codecs and fixed development protocols |
+| `docs/` | Usage, format, build instructions, and experiment designs |
+| `reports/` | Recorded validation and benchmark evidence |
+| `examples/` | Public corpus-manifest example |
+| `benchmark_*.py`, `census.py`, `fuzz_ahps.py`, `summarize_benchmarks.py` | Measurement and validation commands |
+| `app.py`, `ahps-binv2.py`, `ahps-binv2_benchmark.py` | Historical prototypes and compatibility tools |
 
 ## Documentation
 

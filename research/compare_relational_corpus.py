@@ -106,10 +106,10 @@ def prepare(directory):
                    "research/compare_relational_corpus.py", "research/job_runner.py",
                    "docs/relational-corpus-experiment.md", "docs/format.md",
                    "reports/evaluation-protocol.md", "corpus_manifest.json"]
-        tests = sorted(p.name for p in ROOT.glob("test*relational*.py"))
-        if "test_relational.py" not in tests or "test_relational_file.py" not in tests:
+        tests = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "tests").glob("test*relational*.py"))
+        if "tests/test_relational.py" not in tests or "tests/test_relational_file.py" not in tests:
             raise ValueError("Core and file-wrapper regression tests are required before preparation")
-        sources += tests
+        sources += ["tests/__init__.py"] + tests
         pins = [identity(ROOT / name) for name in sources]
         run_runtime = runtime()
         manifest = read_json(ROOT / "corpus_manifest.json")

@@ -60,10 +60,10 @@ BASE_SOURCES = (
 
 
 def source_names():
-    tests = sorted(path.name for path in ROOT.glob("test_*.py"))
-    if not {"test_relational.py", "test_relational_file.py", "test_relational_hybrid.py"}.issubset(tests):
+    tests = sorted(path.relative_to(ROOT).as_posix() for path in (ROOT / "tests").glob("test_*.py"))
+    if not {"tests/test_relational.py", "tests/test_relational_file.py", "tests/test_relational_hybrid.py"}.issubset(tests):
         raise ValueError("Core, wrapper and hybrid regression tests must exist before freezing")
-    return list(BASE_SOURCES) + tests
+    return list(BASE_SOURCES) + ["tests/__init__.py"] + tests
 
 
 def historical_baselines():

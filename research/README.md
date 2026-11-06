@@ -59,7 +59,7 @@ regions; they do not promise streaming or production performance.
 Run correctness checks from the repository root:
 
 ```text
-python -B -m unittest test_relational -v
+python -B -m unittest tests.test_relational -v
 ```
 
 The first comparison uses a pinned Blender development table, two planted

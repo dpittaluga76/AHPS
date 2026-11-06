@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Historical raw-LZMA2 archive regressions: python -m unittest test_legacy_v2."""
+"""Historical raw-LZMA2 archive regressions: python -m unittest tests.test_legacy_v2."""
 
 import importlib.util
 import lzma
@@ -11,7 +11,7 @@ import unittest
 
 
 _SPEC = importlib.util.spec_from_file_location(
-    "ahps_legacy_v2", Path(__file__).with_name("ahps-binv2.py")
+    "ahps_legacy_v2", Path(__file__).resolve().parents[1] / "ahps-binv2.py"
 )
 legacy = importlib.util.module_from_spec(_SPEC)
 sys.modules[_SPEC.name] = legacy

@@ -196,10 +196,10 @@ def prepare(directory):
                    "research/compare_relational_corpus.py", "research/compare_same_boundary_tables.py",
                    "research/job_runner.py", "docs/same-boundary-table-experiment.md", "docs/format.md",
                    "reports/evaluation-protocol.md", "corpus_manifest.json"]
-        tests = sorted(p.name for p in ROOT.glob("test_*.py"))
-        if "test_same_boundary_tables.py" not in tests:
+        tests = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "tests").glob("test_*.py"))
+        if "tests/test_same_boundary_tables.py" not in tests:
             raise ValueError("Same-boundary helper regression tests are required")
-        sources += tests
+        sources += ["tests/__init__.py"] + tests
         pins = [identity(ROOT / name) for name in sources]
         run_runtime = runtime()
         entries = {entry["path"]: entry for entry in read_json(ROOT / "corpus_manifest.json")["development"]}

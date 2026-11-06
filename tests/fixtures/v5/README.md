@@ -11,7 +11,7 @@ The parent process obtained `ahps.py`, `ahps_simd.c` and **the checked-in `ahps_
 
 The JSON records the full commit/tree, each source and DLL git blob ID and SHA-256, runtime executable and `_lzma` extension SHA-256, Python version, capture timestamp, fixture hash, exact settings, archive bytes/hex/hashes, container hashes and decoder verification hashes.
 
-The synthetic input is 8,449 bytes: 4,096 bytes of deterministic CALL/RIP-relative records, 256 fixed 16-byte numeric records, then a 257-byte arithmetic suffix. Its generator is `make_fixture_data()` in `test_plan_features.py`; the capture used a copied standalone generator without importing that test module or candidate `ahps.py`.
+The synthetic input is 8,449 bytes: 4,096 bytes of deterministic CALL/RIP-relative records, 256 fixed 16-byte numeric records, then a 257-byte arithmetic suffix. Its generator is `make_fixture_data()` in `tests/test_plan_features.py`; the capture used a copied standalone generator without importing that test module or candidate `ahps.py`.
 
 Input SHA-256: `7fa07e4edcf0adaf2837c979a610c390bf2ba8f18627fa3e75353c5ba21f0fce`.
 

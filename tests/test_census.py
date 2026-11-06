@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression tests for census.py. Run with: python -m unittest test_census"""
+"""Regression tests for census.py. Run with: python -m unittest tests.test_census"""
 
 import random
 import struct

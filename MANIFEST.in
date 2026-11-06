@@ -3,7 +3,6 @@ include ahps_simd.c ahps_rans.c
 include requirements-research.txt PUBLIC_FILES.txt
 include app.py ahps-binv2.py ahps-binv2_benchmark.py
 include benchmark_ahps.py benchmark_predicates.py census.py fuzz_ahps.py summarize_benchmarks.py
-include test_*.py
 recursive-include docs *.md
 recursive-include reports *.md
 recursive-include scripts *.py

@@ -220,7 +220,8 @@ def prepare(directory, profile_name="first"):
                    "research/__init__.py", "research/relational.py", "research/compare_relational.py",
                    "research/job_runner.py", "docs/relational-compression.md", "docs/format.md",
                    "reports/evaluation-protocol.md", "corpus_manifest.json"]
-        sources += sorted(p.name for p in ROOT.glob("test*relational*.py"))
+        sources += ["tests/__init__.py"] + sorted(
+            p.relative_to(ROOT).as_posix() for p in (ROOT / "tests").glob("test*relational*.py"))
         prior_result = None
         if profile_name == "table-only":
             previous_report = PROFILES["first"]["report"]

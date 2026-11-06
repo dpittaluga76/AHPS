@@ -33,6 +33,7 @@ __pycache__/
 *.tmp
 *.zip
 /public-release/
+/PUBLIC_RELEASE.json
 /dist/
 /build/
 *.egg-info/

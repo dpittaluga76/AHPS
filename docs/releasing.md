@@ -10,9 +10,11 @@ python scripts/check_public.py
 python scripts/export_public.py --output public-release/AHPS-Compressor --zip public-release/AHPS-Compressor-source.zip
 ```
 
-Review the generated `PUBLIC_RELEASE.json`, which lists relative file names,
-sizes, and SHA-256 hashes. Run the documented self-test and regression suite
-from inside the exported directory before publishing. Build native libraries
+The exporter generates `PUBLIC_RELEASE.json` inside each source bundle. It lists
+relative file names, sizes, and SHA-256 hashes for that specific export; it is
+not a tracked repository file. Review it before publishing. Run the documented
+self-test and regression suite from inside the exported directory before
+publishing. Build native libraries
 from source only when needed. Remove locally generated build products from any
 subsequent publication, or recreate the source export.
 

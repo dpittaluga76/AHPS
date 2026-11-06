@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
-from test_support import hardlink_or_skip
+from tests.test_support import hardlink_or_skip
 from unittest import mock
 
 import summarize_benchmarks as summary

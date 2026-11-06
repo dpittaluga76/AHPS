@@ -66,5 +66,5 @@ Regression coverage includes independent F32 and FP8 wire fixtures, all byte val
 The final coordinated run passed **179 tests**. The real chunk 2 `bench` command reproduced the 10,768,040-byte archive and passed SHA-256 verification. The Python reference decoder independently restored all 15,728,640 bytes of chunk 3 from its saved native-produced archive. Final source and native hashes are recorded in `experiments/safetensors-aware-20261105/final-runtime.json`, separately from the timed snapshot. Run the relevant regression suite with this command.
 
 ```powershell
-python -m unittest test_ahps test_csv test_safetensors test_rans_native test_decode_limits test_decompress_file test_golden_archives test_search_defaults test_search_method test_plan_features test_poly2_canonical test_scorer_shortcut
+python scripts/run_tests.py test_ahps test_csv test_safetensors test_rans_native test_decode_limits test_decompress_file test_golden_archives test_search_defaults test_search_method test_plan_features test_poly2_canonical test_scorer_shortcut
 ```

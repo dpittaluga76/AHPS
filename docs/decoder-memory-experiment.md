@@ -104,7 +104,7 @@ only for behavior affected by streaming assembly: piece boundaries, pieces
 spanning adjacent sections, truncated sections, declared-large table/segment
 lengths backed by tiny payloads, and output preservation on failure.
 
-The existing allocation test in `test_decompress_file.py` spies on `assemble`.
+The existing allocation test in `tests/test_decompress_file.py` spies on `assemble`.
 If the new streaming path no longer calls that function, this test alone is
 insufficient: the buffered decoder also calls it during the paired rejection
 check. Observe the new streaming accumulation path directly to demonstrate

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Decoder resource and startup contract tests; all payloads are small.
 
-Run with: python -m unittest test_decode_limits
+Run with: python -m unittest tests.test_decode_limits
 The archive fixtures follow docs/format.md independently of the encoder.
 """
 

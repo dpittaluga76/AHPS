@@ -12,8 +12,8 @@ from unittest import mock
 
 import ahps
 import ahps_safetensors as tensors
-from test_csv import fixture as csv_fixture
-from test_safetensors import v7_fixture
+from tests.test_csv import fixture as csv_fixture
+from tests.test_safetensors import v7_fixture
 
 
 class TtyBuffer(io.StringIO):

@@ -31,7 +31,7 @@ REFERENCE_CASES = {
     "whole": {},
     "chunked": {"EXTREME_LIMIT": 1024, "PLAN_CHUNK_LEN": 4096},
 }
-REFERENCE_PATH = Path(__file__).resolve().parent / "tests" / "fixtures" / "v5" / "default-features.json"
+REFERENCE_PATH = Path(__file__).resolve().parent / "fixtures" / "v5" / "default-features.json"
 REFERENCE_DOCUMENT = json.loads(REFERENCE_PATH.read_text(encoding="utf-8"))
 FROZEN_ARCHIVE_RECORDS = {(record["engine"], record["case"]): record for record in REFERENCE_DOCUMENT["cases"]}
 FROZEN_ARCHIVES_HEX = {key: record["archive_hex"] for key, record in FROZEN_ARCHIVE_RECORDS.items()}

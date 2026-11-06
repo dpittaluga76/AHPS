@@ -24,7 +24,7 @@ classifiers = [
 ahps = "ahps:main"
 
 [project.urls]
-Repository = "https://github.com/dpittaluga76/AHPS-Compressor"
+Repository = "https://github.com/dpittaluga76/ahps"
 
 [tool.setuptools]
 py-modules = ["ahps", "ahps_csv", "ahps_safetensors", "ahps_rans", "ahps_progress"]

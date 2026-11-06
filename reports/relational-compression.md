@@ -120,7 +120,7 @@ source was used.
 - Original cohort and all planned outcomes (local record `relational-first-20261103.json`).
 - Real-table follow-up and all nine measurements (local record `relational-table-20261103.json`).
 - [Independent evidence audit](relational-audit-20261103.md).
-- [Regression tests](../test_relational.py).
+- [Regression tests](../tests/test_relational.py).
 - Local artifacts: `experiments/relational-20261103/` and
   `experiments/relational-table-20261103/` retain frozen source snapshots, input
   bytes, archives, restored files, resource records and logs.

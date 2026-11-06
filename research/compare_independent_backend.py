@@ -77,10 +77,10 @@ META_FIELDS = ("representation", "backend_mode", "source_bytes", "payload_bytes"
 
 
 def source_names():
-    tests = sorted(path.name for path in ROOT.glob("test_*.py"))
-    if "test_independent_backend.py" not in tests:
+    tests = sorted(path.relative_to(ROOT).as_posix() for path in (ROOT / "tests").glob("test_*.py"))
+    if "tests/test_independent_backend.py" not in tests:
         raise ValueError("Independent-backend regression tests are required before freezing")
-    return list(BASE_SOURCES) + tests
+    return list(BASE_SOURCES) + ["tests/__init__.py"] + tests
 
 
 def identity_objects(value):

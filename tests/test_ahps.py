@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression tests for ahps.py. Run with: python -m unittest test_ahps"""
+"""Regression tests for ahps.py. Run with: python -m unittest tests.test_ahps"""
 
 import lzma
 import random

@@ -8,11 +8,13 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
+TESTS = ROOT / "tests"
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("tests", nargs="*", help="Optional unittest module, class, or method names")
+    parser.add_argument("tests", nargs="*",
+                        help="Optional unittest module, class, or method names (test_foo or tests.test_foo)")
     engines = parser.add_mutually_exclusive_group()
     engines.add_argument("--require-native", action="store_true",
                          help="Fail unless both optional native libraries load")
@@ -31,8 +33,13 @@ def main(argv=None):
         if args.require_pure_python and any(loaded):
             parser.error("Pure-Python verification requires a source-only checkout without native libraries")
 
-    names = args.tests or [path.stem for path in sorted(ROOT.glob("test_*.py"))]
+    names = args.tests or [f"tests.{path.stem}" for path in sorted(TESTS.glob("test_*.py"))]
+    if not names:
+        parser.error("No test modules found in tests/")
+    names = [f"tests.{name}" if name.startswith("test_") else name for name in names]
     suite = unittest.defaultTestLoader.loadTestsFromNames(names)
+    if suite.countTestCases() == 0:
+        parser.error("The selected modules contain no tests")
     result = unittest.TextTestRunner(verbosity=2 if args.verbose else 1).run(suite)
     return 0 if result.wasSuccessful() else 1
 
