@@ -1,0 +1,46 @@
+__pycache__/
+*.pyc
+.ahps-benchmark.lock
+/corpus_development/
+/experiments/
+/blender.exe
+/corpus_out/census.json
+/test.pdf
+/xchange.txt
+
+# Local datasets, documents, and model weights are not release source.
+/test corpus/
+/answers.pdf
+/gutenberg-dpo.csv
+*.safetensors
+*.gguf
+*.parquet
+/corpus_manifest.local.json
+/examples/data/
+
+# Rebuild native libraries from source.
+*.dll
+*.so
+*.dylib
+*.o
+*.obj
+*.pdb
+
+# Local outputs and environments.
+*.ahps
+!tests/fixtures/v3/*.ahps
+*.ahwt
+*.tmp
+*.zip
+/public-release/
+/dist/
+/build/
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+.env.*
+!.env.example

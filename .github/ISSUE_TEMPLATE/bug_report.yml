@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a reproducible AHPS failure or unexpected result.
+body:
+  - type: markdown
+    attributes:
+      value: For security-sensitive findings, follow SECURITY.md. Share a small synthetic reproducer rather than private files or model weights.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Exact command, relevant options, and minimal input or input generator.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Revision, Python version, operating system, CPU, and whether native libraries are loaded.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output and verification
+      description: Error text, archive/input sizes, and whether exact restoration passed. Remove sensitive paths and data.

@@ -1,0 +1,19 @@
+include LICENSE README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md
+include ahps_simd.c ahps_rans.c
+include requirements-research.txt PUBLIC_FILES.txt
+include app.py ahps-binv2.py ahps-binv2_benchmark.py
+include benchmark_ahps.py benchmark_predicates.py census.py fuzz_ahps.py summarize_benchmarks.py
+include test_*.py
+recursive-include docs *.md
+recursive-include reports *.md
+recursive-include scripts *.py
+recursive-include research *.py *.c *.md
+recursive-include tests *.py *.md *.ahps *.sha256 *.json
+recursive-include examples *.json
+recursive-include .github *.yml *.yaml *.md
+exclude tests/fixtures/v3/dll_c.ahps tests/fixtures/v3/dll_py.ahps tests/fixtures/v3/dll.sha256
+global-exclude *.dll *.so *.dylib *.exe *.pdf *.safetensors *.gguf *.csv *.jsonl *.log *.ahwt *.pyc
+prune experiments
+prune public-release
+prune corpus_development
+prune corpus_out

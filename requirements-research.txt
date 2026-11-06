@@ -1,0 +1,5 @@
+# Optional weight-comparison helpers only; core AHPS uses the Python stdlib.
+# Versions used for the recorded weight experiments.
+numpy==2.4.5
+zstandard==0.22.0
+brotli==1.0.9

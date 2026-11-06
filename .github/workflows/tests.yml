@@ -1,0 +1,77 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: Python ${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.13']
+        include:
+          - os: macos-latest
+            python: '3.13'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run source-only synthetic tests
+        run: python scripts/run_tests.py --require-pure-python -v
+      - name: Validate public source inventory and documentation links
+        run: python scripts/check_public.py
+
+  native:
+    name: Native libraries on Linux
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Build native libraries from source
+        run: python scripts/build_native.py --target all
+      - name: Run native and Python compatibility tests
+        run: python scripts/run_tests.py --require-native -v
+
+  optional-research:
+    name: Optional weight research codecs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install optional research dependencies
+        run: python -m pip install numpy zstandard brotli
+      - name: Test synthetic weight transforms and archives
+        run: python scripts/run_tests.py test_weight_compression -v
+
+  package:
+    name: Install and smoke-test Python wheel
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Build wheel
+        run: python -m pip wheel . --no-deps --wheel-dir dist
+      - name: Install wheel
+        run: python -m pip install --no-deps dist/*.whl
+      - name: Verify installed console command outside checkout
+        working-directory: ${{ runner.temp }}
+        run: ahps selftest --no-progress

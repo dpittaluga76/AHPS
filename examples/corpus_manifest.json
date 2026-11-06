@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "status": "Synthetic public example; generate with python scripts/make_demo.py",
+  "development": [
+    {"id": "demo", "path": "examples/data/demo.bin", "split": "development", "note": "Deterministic synthetic records"}
+  ],
+  "sealed": []
+}

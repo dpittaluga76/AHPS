@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "reference": {
+    "commit": "1d436f33090276b64a841709393833f4e15bef27",
+    "git_tree": "ee82ab1303ecd37563a573ec6018efdd6c520563",
+    "artifacts": {
+      "ahps.py": {
+        "git_blob": "9497724f7cd595fe77a367fbb750ce0901fb7499",
+        "sha256": "245cc75a161e74de9758ca64fc9352d54f328931090e5ec030e1118fd64ac729",
+        "bytes": 53674
+      },
+      "ahps_simd.c": {
+        "git_blob": "66a7c4987a9b810024d61f3a6d9a84ff58b617f9",
+        "sha256": "c32dba8ab7f924fdf2b79d5969c5b4c7f5273e19e852158d2de1fb8598100e27",
+        "bytes": 23271
+      },
+      "ahps_simd.dll": {
+        "git_blob": "36543616e8b1ca91a2449129434ca1c6c5f40333",
+        "sha256": "031d24d287a75d9185f9046a78814d3a0d64bacbd7ab59416f2bf1ac1d8970c7",
+        "bytes": 48675
+      }
+    },
+    "native_artifact_policy": "Exact checked-in DLL from this commit; not rebuilt"
+  },
+  "captured_utc": "2026-10-31T23:34:52.699629+00:00",
+  "runtime": {
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "python_implementation": "CPython",
+    "executable": {
+      "path": "<python-runtime>/python.exe",
+      "sha256": "f8b45d63047da9d9adf09892e4cc4317b859e86a93a478cc9616bc69d3b176e5",
+      "bytes": 107312
+    },
+    "base_executable": {
+      "path": "<python-runtime>/python.exe",
+      "sha256": "f8b45d63047da9d9adf09892e4cc4317b859e86a93a478cc9616bc69d3b176e5",
+      "bytes": 107312
+    },
+    "_lzma": {
+      "path": "<python-runtime>/DLLs/_lzma.pyd",
+      "sha256": "a168fc517c3c150fc4fb95ce75aa3366fb58170d5c29556b1c04bcf890d4b3a1",
+      "bytes": 168240
+    }
+  },
+  "native_abi": 206,
+  "loaded_source_sha256": "245cc75a161e74de9758ca64fc9352d54f328931090e5ec030e1118fd64ac729",
+  "loaded_dll_sha256": "031d24d287a75d9185f9046a78814d3a0d64bacbd7ab59416f2bf1ac1d8970c7",
+  "fixture": {
+    "name": "x86-records-arithmetic-8449",
+    "bytes": 8449,
+    "sha256": "7fa07e4edcf0adaf2837c979a610c390bf2ba8f18627fa3e75353c5ba21f0fce",
+    "generation": "Copied deterministic fixture construction; no candidate module imported"
+  },
+  "cases": [
+    {
+      "case": "whole",
+      "engine": "python",
+      "arguments": {
+        "block_size": 512,
+        "force_python": true,
+        "lzma_preset": 0
+      },
+      "planner_overrides": {},
+      "effective_constants": {
+        "EXTREME_LIMIT": 16777216,
+        "PLAN_CHUNK_LEN": 15728640,
+        "CHAIN_MIN_LEN": 4096
+      },
+      "archive_hex": "fd377a585a000004e6d6b446020021010c0000008f98419ce02132010c5d0020920646d2af8d2e3693d4be2e5bcedcc91c0af732a7fedfecb81c3a4468e08b9add85f22eab2a599b8de478cfe1147662198a4c2e42936dce4f3d6eedf416c11985b9dd7fb52acfa1b10111abe37ee1bbf9aa10cc267b3635a3e059d662126b271a892742f4b0e433fbfc46379cdd7d79e4eacff1f22f433c5659e799c511cb81d6bcc1605da0d0040f0bbc68cf343db13efa57c7963df386e3f9334f43daeed9618c2661c5603c586c8e6f48c5726d4f9dd238c3e03605843fe06e5f60a2fe24f38c68668ffbdd40cd1fed2c4302276cc32d1648b9225c2fe4b64730ad6dae4c8a2e004d453183bb0f3e19b9df5243a85ede848c29a20f3209db33dcd7c9d1c311113e8e4cc53955a2f6b80089ac4693f368f3e50001a802b3420000e4ac0330b1c467fb020000000004595a",
+      "archive_sha256": "1861d4cb18b428f754c79da2708de26d53dfde0aa871563bf80bbc4570d1fc0a",
+      "archive_bytes": 332,
+      "container_sha256": "3d0a8e8ec9c67c1a4cb88c2e8f92926720fe27d05e981dcc010f12ffa11082f6",
+      "decoded_sha256": {
+        "python": "7fa07e4edcf0adaf2837c979a610c390bf2ba8f18627fa3e75353c5ba21f0fce",
+        "native": "7fa07e4edcf0adaf2837c979a610c390bf2ba8f18627fa3e75353c5ba21f0fce"
+      },
+      "programs": {
+        "EXE_SPLIT": [
+          1,
+          4096
+        ],
+        "DELTA1(16) -> SPLIT(16)": [
+          1,
+          4353
+        ]
+      }
+    },
+    {
+      "case": "whole",
+      "engine": "native",
+      "arguments": {
+        "block_size": 512,
+        "force_python": false,
+        "lzma_preset": 0
+      },
+      "planner_overrides": {},
+      "effective_constants": {
+        "EXTREME_LIMIT": 16777216,
+        "PLAN_CHUNK_LEN": 15728640,
+        "CHAIN_MIN_LEN": 4096
+      },
+      "archive_hex": "fd377a585a000004e6d6b446020021010c0000008f98419ce02132010c5d0020920646d2af8d2e3693d4be2e5bcedcc91c0af732a7fedfecb81c3a4468e08b9add85f22eab2a599b8de478cfe1147662198a4c2e42936dce4f3d6eedf416c11985b9dd7fb52acfa1b10111abe37ee1bbf9aa10cc267b3635a3e059d662126b271a892742f4b0e433fbfc46379cdd7d79e4eacff1f22f433c5659e799c511cb81d6bcc1605da0d0040f0bbc68cf343db13efa57c7963df386e3f9334f43daeed9618c2661c5603c586c8e6f48c5726d4f9dd238c3e03605843fe06e5f60a2fe24f38c68668ffbdd40cd1fed2c4302276cc32d1648b9225c2fe4b64730ad6dae4c8a2e004d453183bb0f3e19b9df5243a85ede848c29a20f3209db33dcd7c9d1c311113e8e4cc53955a2f6b80089ac4693f368f3e50001a802b3420000e4ac0330b1c467fb020000000004595a",
+      "archive_sha256": "1861d4cb18b428f754c79da2708de26d53dfde0aa871563bf80bbc4570d1fc0a",
+      "archive_bytes": 332,
+      "container_sha256": "3d0a8e8ec9c67c1a4cb88c2e8f92926720fe27d05e981dcc010f12ffa11082f6",
+      "decoded_sha256": {
+        "python": "7fa07e4edcf0adaf2837c979a610c390bf2ba8f18627fa3e75353c5ba21f0fce",
+        "native": "7fa07e4edcf0adaf2837c979a610c390bf2ba8f18627fa3e75353c5ba21f0fce"
+      },
+      "programs": {
+        "EXE_SPLIT": [
+          1,
+          4096
+        ],
+        "DELTA1(16) -> SPLIT(16)": [
+          1,
+          4353
+        ]
+      }
+    },
+    {
+      "case": "chunked",
+      "engine": "python",
+      "arguments": {
+        "block_size": 512,
+        "force_python": true,
+        "lzma_preset": 0
+      },
+      "planner_overrides": {
+        "EXTREME_LIMIT": 1024,
+        "PLAN_CHUNK_LEN": 4096
+      },
+      "effective_constants": {
+        "EXTREME_LIMIT": 1024,
+        "PLAN_CHUNK_LEN": 4096,
+        "CHAIN_MIN_LEN": 4096
+      },
+      "archive_hex": "fd377a585a000004e6d6b446020021010c0000008f98419ce0213c00d85d0020920646d2af92b3f6a3e2befbc53e11319ecc426353cd750954aa0ead6ece5fead2de105982488266665d7280159c6bb5ee1005d40008c593a658a6e10bab62d7e0862ed255a2adfcebbc6cd70fc7c1ffb41437797d6f5356e2dad1ac190663d06017fb5e1838ad24b32ebec370350f267bd9dcf056da7d07673692f9293cbe4246acb6c26dde952a1de55629ed0c34aafc68e0ae14eed01eea0a0cfb96a1e02d0cca37a052512e4befd928d15364919651c8ca9099e1cbde53104d0c3e8a1f91096d435114edd19d799cf97cb5a89f4917d71bdc1d98ee000405d7ea567d219e0001f401bd4200008b6930ecb1c467fb020000000004595a",
+      "archive_sha256": "9f302a7c78072fa9e5c6adfa1c918541874c558f7fa644de182fc859c96a3f9e",
+      "archive_bytes": 280,
+      "container_sha256": "bdbfafb640a7c172c57377db3ad393b838b4dd2993ea33554afce4eb5a944564",
+      "decoded_sha256": {
+        "python": "7fa07e4edcf0adaf2837c979a610c390bf2ba8f18627fa3e75353c5ba21f0fce",
+        "native": "7fa07e4edcf0adaf2837c979a610c390bf2ba8f18627fa3e75353c5ba21f0fce"
+      },
+      "programs": {
+        "EXE_SPLIT": [
+          1,
+          4096
+        ],
+        "DELTA1(16) -> SPLIT(16)": [
+          1,
+          4096
+        ],
+        "DELTA1(1)": [
+          1,
+          257
+        ]
+      }
+    },
+    {
+      "case": "chunked",
+      "engine": "native",
+      "arguments": {
+        "block_size": 512,
+        "force_python": false,
+        "lzma_preset": 0
+      },
+      "planner_overrides": {
+        "EXTREME_LIMIT": 1024,
+        "PLAN_CHUNK_LEN": 4096
+      },
+      "effective_constants": {
+        "EXTREME_LIMIT": 1024,
+        "PLAN_CHUNK_LEN": 4096,
+        "CHAIN_MIN_LEN": 4096
+      },
+      "archive_hex": "fd377a585a000004e6d6b446020021010c0000008f98419ce0213c00d85d0020920646d2af92b3f6a3e2befbc53e11319ecc426353cd750954aa0ead6ece5fead2de105982488266665d7280159c6bb5ee1005d40008c593a658a6e10bab62d7e0862ed255a2adfcebbc6cd70fc7c1ffb41437797d6f5356e2dad1ac190663d06017fb5e1838ad24b32ebec370350f267bd9dcf056da7d07673692f9293cbe4246acb6c26dde952a1de55629ed0c34aafc68e0ae14eed01eea0a0cfb96a1e02d0cca37a052512e4befd928d15364919651c8ca9099e1cbde53104d0c3e8a1f91096d435114edd19d799cf97cb5a89f4917d71bdc1d98ee000405d7ea567d219e0001f401bd4200008b6930ecb1c467fb020000000004595a",
+      "archive_sha256": "9f302a7c78072fa9e5c6adfa1c918541874c558f7fa644de182fc859c96a3f9e",
+      "archive_bytes": 280,
+      "container_sha256": "bdbfafb640a7c172c57377db3ad393b838b4dd2993ea33554afce4eb5a944564",
+      "decoded_sha256": {
+        "python": "7fa07e4edcf0adaf2837c979a610c390bf2ba8f18627fa3e75353c5ba21f0fce",
+        "native": "7fa07e4edcf0adaf2837c979a610c390bf2ba8f18627fa3e75353c5ba21f0fce"
+      },
+      "programs": {
+        "EXE_SPLIT": [
+          1,
+          4096
+        ],
+        "DELTA1(16) -> SPLIT(16)": [
+          1,
+          4096
+        ],
+        "DELTA1(1)": [
+          1,
+          257
+        ]
+      }
+    }
+  ]
+}
