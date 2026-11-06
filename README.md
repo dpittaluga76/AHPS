@@ -1,4 +1,4 @@
-# AHPS Compressor
+# Asymmetric Hybrid Program Synthesis - Experimental Compression Tool
 
 AHPS (Asymmetric Hybrid Program Synthesis) is an experimental lossless
 compressor. It searches for reversible byte transforms, chooses candidates by
